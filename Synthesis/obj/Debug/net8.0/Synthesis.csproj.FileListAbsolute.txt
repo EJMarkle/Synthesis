@@ -1,0 +1,15 @@
+C:\Code\Synthesis\Synthesis\bin\Debug\net8.0\Synthesis.exe
+C:\Code\Synthesis\Synthesis\bin\Debug\net8.0\Synthesis.deps.json
+C:\Code\Synthesis\Synthesis\bin\Debug\net8.0\Synthesis.runtimeconfig.json
+C:\Code\Synthesis\Synthesis\bin\Debug\net8.0\Synthesis.dll
+C:\Code\Synthesis\Synthesis\bin\Debug\net8.0\Synthesis.pdb
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.AssemblyInfoInputs.cache
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.AssemblyInfo.cs
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.csproj.CoreCompileInputs.cache
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.sourcelink.json
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.dll
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\refint\Synthesis.dll
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.pdb
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\Synthesis.genruntimeconfig.cache
+C:\Code\Synthesis\Synthesis\obj\Debug\net8.0\ref\Synthesis.dll
