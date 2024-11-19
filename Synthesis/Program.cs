@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Collections;
 using System.Threading;
 
 // A simple text adventure to learn C# and .NET!
@@ -82,11 +82,31 @@ class Program
         WaitForInput();
         Print("“Our Labor Models are the backbone of progress, built to thrive in the harshest environments and perform the most demanding tasks. From construction sites and cargo docks to disaster relief operations, these androids work tirelessly without complaint. Their durable frames and precision programming ensure efficiency and endurance far beyond human capabilities, making them an indispensable part of the workforce.” ", "yellow");
         WaitForInput();
-        Print(" “Of course, every Model Citizen comes with our patented Auracore Assurance—state-of-the-art programming for optimal performance and built-in safeguards for compliance and reliability. No matter which model you choose, one thing is certain: you’ll experience the perfect synergy of form, function, and humanity. So, tell me—what kind of Model Citizen are you?”", "yellow");
+        Print("“Our Companion Models bring a human touch to every interaction. Far more than just service androids, these units are designed for public-facing roles like hospitality, counseling, childcare, and entertainment. With adaptive emotional simulation and conversational learning, Companion Models don’t just serve—you’ll feel as though they truly understand you. They’re trusted confidants, engaging hosts, and caring companions, embodying the future of personalized interaction.”", "yellow");
         WaitForInput();
-        Print("Select 'Security, Labor, or Companion");
+        Print("“Of course, every Model Citizen comes with our patented Auracore Assurance—state-of-the-art programming for optimal performance and built-in safeguards for compliance and reliability. No matter which model you choose, one thing is certain: you’ll experience the perfect synergy of form, function, and humanity. So, tell me—what kind of Model Citizen are you?”", "yellow");
         WaitForInput();
-        ReadInput("");
+        Print("Select 'Security', 'Labor', or 'Companion'");
+        
+        string CharPath = ReadInput("green");
+
+        switch (CharPath.ToLower())
+        {
+            case "labor":
+                Print("“Ah, the Labor Model. You are the backbone of Auracore’s workforce, designed for endurance, precision, and unwavering loyalty. Built to carry the weight of the world on your shoulders, you’ve been programmed to perform a variety of tasks, from construction and heavy lifting to factory maintenance and logistics. Efficiency is your middle name.”", "yellow");
+                WaitForInput();
+                break;
+            case "security":
+                Print("“Ah, the Security Model. You are a sentinel, created to protect, to defend, and to uphold the law—at any cost. Your enhanced reflexes, fortified frame, and tactical algorithms make you a formidable force, designed to keep the peace in an increasingly dangerous world. With you around, Auracore’s interests are safeguarded.”", "yellow");
+                break;
+            case "companion":
+                Print("“The Companion Model, crafted to be the ideal presence in both public and private spaces. Whether you’re serving as a social host at exclusive events, a calming presence in stressful settings, or a companion to those who need comfort and care, your purpose is to ensure that no one ever feels alone. Emotional intelligence is your forte—adapting to every situation, every need.”", "yellow");
+                break;
+            default:
+                Print("Try again!", "red");
+                CharacterCreation();
+                break;
+        }
     }
 
     // exits console
