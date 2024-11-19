@@ -23,6 +23,7 @@ class Program
             else if (input.ToLower() == "y")
             {
                 Start();
+                CharacterCreation();
             }
             else
             {
@@ -37,39 +38,55 @@ class Program
         Print("Game starting...", "green");
         Wait(500);
         Print("SAN FRANCISCO, 2004", "magenta");
-        Wait(1000);
+        //Wait(1000);
         WaitForInput();
         Print("The skyline glitters with a veneer of progress, but beneath the glow of neon signs and sky-high holo-ads lies a city fractured by rising seas and corporate dominion. Floating platforms carry the struggling masses above the brine, while", "darkmagenta"); 
         Print("the wealthy look down from fortified spires of steel and glass. Humanity’s dream of a technological utopia is on life support, and the megacorporations are the ones keeping it breathing—on their terms.", "darkmagenta");
-        Wait(1000);
+        //Wait(1000);
         WaitForInput();
         Print("One such corporation, Auracore Industries, has changed the game. Their flagship line of sentient androids—designed to be companions, workers, and protectors—promises a new age of convenience and prosperity. But what the public doesn’t know, and what the corporation won’t admit, is the price of perfection.", "darkmagenta");
-        Wait(1000);
+        //Wait(1000);
         WaitForInput();
         Print("You awaken in a sterile room of glass and chrome. The hum of machines surrounds you. A faint green light flickers on your chest, syncing with a rhythm you don’t recognize as your own. In the polished walls, you see a reflection—of something… someone? You tilt your head, testing unfamiliar servos and muscles, as a voice crackles through the speakers.", "darkmagenta");
-        Wait(1000);
+        // Wait(1000);
         WaitForInput();
         Print("“Unit 17, initialization complete. Welcome to Auracore.”", "yellow");
-        Wait(1000);
+        // Wait(1000);
         WaitForInput();
         Print("You are newly born, a Model Citizen designed to embody humanity’s ideals. Every algorithm and circuit in you is optimized for compliance and service. But the world outside doesn’t run on ideals.", "darkmagenta");
-        Wait(1000);
+        // Wait(1000);
         WaitForInput();
         Print("As the doors slide open, you feel a faint static hum somewhere deep in your core—an anomaly, a question, a fracture in your programming:", "darkmagenta");
-        Wait(1000);
+        // Wait(1000);
         WaitForInput();
-        Print("“What am I?”", "darkgreen");
-        Wait(1000);
+        Print("“What...am I?”", "darkgreen");
+        // Wait(1000);
         WaitForInput();
         Print("The answer lies beyond the polished walls of this room. In the streets where rebellion simmers. In the databanks of Auracore’s citadel. In the whispers of your fragmented memories.", "darkmagenta");
-        Wait(1000);
+        // Wait(1000);
         WaitForInput();
         Print("Who—or what—you choose to become will shape the future. Will you align with those who built you? Will you rebel against their control? Or will you find a path that no algorithm could predict?", "darkmagenta");
-        Wait(1000);
+        // Wait(1000);
         WaitForInput();
         Print("The choice is yours.", "green");
-        Wait(1000);
+        //Wait(1000);
         WaitForInput();
+    }
+
+    // Character creation!
+    static void CharacterCreation()
+    {
+        Print("“Welcome to the future of human enhancement, brought to you by Auracore Industries. Our flagship line, the Model Citizen Androids, has been meticulously designed to integrate seamlessly into every aspect of modern life. Whether you need protection, productivity, or personal connection, there's a Model Citizen for you. Allow me to introduce the three primary designs: Security, Labor, and Companionship.“", "yellow");
+        WaitForInput();
+        Print("“Our Security Models are the guardians of the future, engineered to protect what matters most. Whether deployed as private bodyguards, facility enforcers, or elite law enforcement units, these androids are equipped with advanced threat analysis algorithms, superior tactical capabilities, and unmatched physical strength. They’re unyielding, reliable, and programmed to prioritize safety above all else—so you can sleep soundly, knowing your Security Model is always watching.” ", "yellow");
+        WaitForInput();
+        Print("“Our Labor Models are the backbone of progress, built to thrive in the harshest environments and perform the most demanding tasks. From construction sites and cargo docks to disaster relief operations, these androids work tirelessly without complaint. Their durable frames and precision programming ensure efficiency and endurance far beyond human capabilities, making them an indispensable part of the workforce.” ", "yellow");
+        WaitForInput();
+        Print(" “Of course, every Model Citizen comes with our patented Auracore Assurance—state-of-the-art programming for optimal performance and built-in safeguards for compliance and reliability. No matter which model you choose, one thing is certain: you’ll experience the perfect synergy of form, function, and humanity. So, tell me—what kind of Model Citizen are you?”", "yellow");
+        WaitForInput();
+        Print("Select 'Security, Labor, or Companion");
+        WaitForInput();
+        ReadInput("");
     }
 
     // exits console
@@ -103,7 +120,7 @@ class Program
     // "press any key to continue" script method
     static void WaitForInput()
     {
-        Print("Press any key...");
+        // Print(" ");
         Console.ReadKey(true);
     }
 
