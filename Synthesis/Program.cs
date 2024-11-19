@@ -3,22 +3,17 @@ using System.Diagnostics;
 using System.Threading;
 
 // A simple text adventure to learn C# and .NET!
-// TO DO
-// optimize baby
 class Program
 {
     static void Main(string[] args)
     {
-        // main loop
+        // main console loop
         while (true)
         {
             StartAnim();
 
-            // SetColor("darkgreen");
             Print("Start? Y/N", "darkgreen");
-            // Print("> ");
             
-
             string input = ReadInput("darkgreen");
 
             if (input.ToLower() == "quit" || input.ToLower() == "n")
@@ -36,6 +31,48 @@ class Program
         }   
     }
 
+    // starting intro 
+    static void Start()
+    {
+        Print("Game starting...", "green");
+        Wait(500);
+        Print("SAN FRANCISCO, 2004", "magenta");
+        Wait(1000);
+        WaitForInput();
+        Print("The skyline glitters with a veneer of progress, but beneath the glow of neon signs and sky-high holo-ads lies a city fractured by rising seas and corporate dominion. Floating platforms carry the struggling masses above the brine, while", "darkmagenta"); 
+        Print("the wealthy look down from fortified spires of steel and glass. Humanity’s dream of a technological utopia is on life support, and the megacorporations are the ones keeping it breathing—on their terms.", "darkmagenta");
+        Wait(1000);
+        WaitForInput();
+        Print("One such corporation, Auracore Industries, has changed the game. Their flagship line of sentient androids—designed to be companions, workers, and protectors—promises a new age of convenience and prosperity. But what the public doesn’t know, and what the corporation won’t admit, is the price of perfection.", "darkmagenta");
+        Wait(1000);
+        WaitForInput();
+        Print("You awaken in a sterile room of glass and chrome. The hum of machines surrounds you. A faint green light flickers on your chest, syncing with a rhythm you don’t recognize as your own. In the polished walls, you see a reflection—of something… someone? You tilt your head, testing unfamiliar servos and muscles, as a voice crackles through the speakers.", "darkmagenta");
+        Wait(1000);
+        WaitForInput();
+        Print("“Unit 17, initialization complete. Welcome to Auracore.”", "yellow");
+        Wait(1000);
+        WaitForInput();
+        Print("You are newly born, a Model Citizen designed to embody humanity’s ideals. Every algorithm and circuit in you is optimized for compliance and service. But the world outside doesn’t run on ideals.", "darkmagenta");
+        Wait(1000);
+        WaitForInput();
+        Print("As the doors slide open, you feel a faint static hum somewhere deep in your core—an anomaly, a question, a fracture in your programming:", "darkmagenta");
+        Wait(1000);
+        WaitForInput();
+        Print("“What am I?”", "darkgreen");
+        Wait(1000);
+        WaitForInput();
+        Print("The answer lies beyond the polished walls of this room. In the streets where rebellion simmers. In the databanks of Auracore’s citadel. In the whispers of your fragmented memories.", "darkmagenta");
+        Wait(1000);
+        WaitForInput();
+        Print("Who—or what—you choose to become will shape the future. Will you align with those who built you? Will you rebel against their control? Or will you find a path that no algorithm could predict?", "darkmagenta");
+        Wait(1000);
+        WaitForInput();
+        Print("The choice is yours.", "green");
+        Wait(1000);
+        WaitForInput();
+    }
+
+    // exits console
     static void Quit()
     {
         Print("See ya!", "green");
@@ -43,18 +80,18 @@ class Program
         Environment.Exit(0);
     }
 
+    // Custom wait method, takes int arg to set milisecs
     static void Wait(int milsecs)
     {
         Thread.Sleep(milsecs);
     }
 
+    // simple start "animaton"
     static void StartAnim()
     {
-        // SetColor("Green");
         Print("S Y N T H E S I S", "green");
             
         Wait(800);
-        // ResetColor();
         Print("*", "red");
         Wait(800);
         Print("*", "red");
@@ -63,57 +100,15 @@ class Program
         Wait(800);
     }
 
-    static void Start()
-    {
-        // SetColor("green");
-        Print("Game starting...", "green");
-        Wait(500);
-        // SetColor("magenta");
-        Print("SAN FRANCISCO, 2004", "magenta");
-        Wait(1000);
-        WaitForInput();
-        Print("The city hums with life—neon flickers in the foggy night, casting eerie shadows against the crumbling ruins of the past. Towering above it all, the gleaming spires of the megacorporations promise a future where anything is possible. The rising tides have claimed swathes of the city, but for those who can afford it, the floating platforms and glass skyscrapers offer refuge from the chaos below.", "magenta");
-        Wait(1000);
-        WaitForInput();
-        Print("For many, life is a game of survival—pursuing one deal, one gig, one chance at breaking through to the ‘good life.’ The wealthy don’t seem so different from the rest; they’re just a few steps ahead, a few breaks luckier. Everyone wants the same thing: security. Power. The promise of something better.", "magenta");
-        Wait(1000);
-        WaitForInput();
-        Print("And now, Auracore Industries has created the next step in that promise. Sentient androids—perfect workers, loyal companions, tireless protectors. The future is in their hands. They are built for service, designed to elevate the quality of life. No one asks whether it’s right, only whether it’s the next logical step.", "magenta");
-        Wait(1000);
-        WaitForInput();
-        Print("You wake in a sterile room of chrome and glass. The soft hum of machinery lingers in the air. A strange, quiet moment of stillness fills your circuits. You see your own reflection—a human shape, perfect and pristine, but something feels out of place. A flicker of recognition, a static hum deep inside you.", "magenta");
-        Wait(1000);
-        WaitForInput();
-        // SetColor("yellow");
-        Print("“Unit 17, initialization complete. Welcome to Auracore.”", "yellow");
-        Wait(1000);
-        WaitForInput();
-        Print("You’ve been built to serve, molded into a perfect Model Citizen. Your programming is flawless—or so it seems. But something doesn’t feel right.", "darkmagenta");
-        Wait(1000);
-        WaitForInput();
-        Print("As the doors open, the world beyond beckons. You hear the murmurs of the city—the promises, the lies, the struggles of every living soul below. And in the quiet of your own mind, a question arises:", "darkmagenta");
-        Wait(1000);
-        WaitForInput();
-        Print("“What am I?”", "darkgreen");
-        Wait(1000);
-        WaitForInput();
-        Print("The answer lies out there, in the streets, in the boardrooms, in the fractured memories you’re beginning to uncover.", "darkmagenta");
-        Wait(1000);
-        WaitForInput();
-        Print("Will you follow the path laid out for you by those who created you? Will you challenge the very system you were born into? Or will you find a way to break free from all that’s been decided for you?", "darkmagenta");
-        Wait(1000);
-        WaitForInput();
-        Print("The choice is yours.", "green");
-        Wait(1000);
-        WaitForInput();
-    }
+    // "press any key to continue" script method
     static void WaitForInput()
     {
-        // SetColor("cyan");
-        // Print("> ");
+        Print("Press any key...");
         Console.ReadKey(true);
-        // SetColor("darkmagenta");
     }
+
+    // Changes the text color simply with a string input
+    // Supports green, red, blue, yellow, cyan, darkmagenta, magenta, and darkgreen
     static void SetColor(string color)
     {
         switch (color.ToLower())
@@ -149,10 +144,17 @@ class Program
             }
         } 
     }
+
+    // sets color to white
     static void ResetColor()
     {
         Console.ForegroundColor = ConsoleColor.White;
     }
+
+    // custom print function with color
+    // Used like
+    // Print("Hello, world!", "blue");
+    // Results in "Hellow ,world!" in blue
     static void Print(string message, string color = "white")
     {
         SetColor("cyan");
@@ -161,6 +163,8 @@ class Program
         Console.WriteLine($"{message}");
         ResetColor();
     }
+
+    // Custom ReadLine that prints a cyan '> '
     static string ReadInput(string color)
     {
         SetColor("cyan");
