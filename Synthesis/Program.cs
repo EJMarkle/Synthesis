@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using Microsoft.VisualBasic;
 
 // A simple text adventure to learn C# and .NET!
 class Program
 {
+    static string modelType;
 
     static string title = "SAN FRANCISCO, 2004";
     static string intro0 = "The skyline glitters with a veneer of progress, but beneath the glow of neon signs and sky-high holo-ads lies a city fractured by rising seas and corporate dominion. Floating platforms carry the struggling masses above the brine, while the wealthy look down from fortified spires of steel and glass. Humanity’s dream of a technological utopia is on life support, and the megacorporations are the ones keeping it breathing—on their terms.";
@@ -20,9 +22,9 @@ class Program
     
     static string modelSelect = "Enter model...";
 
-    static string laborResponse = "You chose Labor";
-    static string secResponse = "You chose Security";
-    static string companResponse = "You chose Companion";
+    static string laborResponse = "You chose Labor. Confirm? Y/N:";
+    static string secResponse = "You chose Security. Confirm? Y/N:";
+    static string companResponse = "You chose Companion. Confirm? Y/N:";
 
 
     static void Main(string[] args)
@@ -79,13 +81,43 @@ class Program
         switch (CharPath.ToLower())
         {
             case "labor":
-                Print(laborResponse, "yellow");
+                PrintSkip(laborResponse, "yellow");
+                string input = ReadInput("green");
+                if (input.ToLower() == "y" || input.ToLower() == "yes")
+                {
+                    modelType = "labor";
+                    Print(modelType);
+                }
+                else
+                {
+                    CharacterCreation();
+                }
                 break;
             case "security":
-                Print(secResponse, "yellow");
+                PrintSkip(secResponse, "yellow");
+                input = ReadInput("green");
+                if (input.ToLower() == "y" || input.ToLower() == "yes")
+                {
+                    modelType = "security";
+                    Print(modelType);
+                }
+                else
+                {
+                    CharacterCreation();
+                }
                 break;
             case "companion":
-                Print(companResponse, "yellow");
+                PrintSkip(companResponse, "yellow");
+                input = ReadInput("green");
+                if (input.ToLower() == "y" || input.ToLower() == "yes")
+                {
+                    modelType = "Companion";
+                    Print(modelType);
+                }
+                else
+                {
+                    CharacterCreation();
+                }
                 break;
             default:
                 PrintSkip("Try again!", "red");
@@ -97,7 +129,7 @@ class Program
     // exits console
     static void Quit()
     {
-        Print("See ya!", "green");
+        PrintSkip("See ya!", "green");
         ResetColor();
         Environment.Exit(0);
     }
@@ -125,7 +157,6 @@ class Program
     // "press any key to continue" script method
     static void WaitForInput()
     {
-        // Print(" ");
         Console.ReadKey(true);
     }
 
@@ -211,6 +242,5 @@ class Program
 
         return input;
     }
-    
 
 }
