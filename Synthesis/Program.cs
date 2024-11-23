@@ -147,11 +147,11 @@ class Program
             
         Wait(800);
         PrintSkip("*", "red");
-        Wait(800);
+        Wait(500);
         PrintSkip("*", "red");
-        Wait(800);
+        Wait(500);
         PrintSkip("*", "red");
-        Wait(800);
+        Wait(500);
     }
 
     // "press any key to continue" script method
