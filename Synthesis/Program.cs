@@ -51,6 +51,22 @@ class Program
             {
                 Print("Invalid input. Please type 'y or 'n'", "red");
             }
+
+            switch (modelType.ToLower())
+            {
+                case "labor":
+                    LaborStart();
+                    break;
+                case "security":
+                    SecStart();
+                    break;
+                case "companion":
+                    CompanStart();
+                    break;
+                default:
+                    CharacterCreation();
+                    break;
+            }
         }   
     }
 
@@ -124,6 +140,21 @@ class Program
                 CharacterCreation();
                 break;
         }
+    }
+
+    static void LaborStart()
+    {
+        Print("So begins the labor path...");
+    }
+
+    static void SecStart()
+    {
+        Print("So begins the security path...");
+    }
+
+    static void CompanStart()
+    {
+        Print("So begins the companion path...");
     }
 
     // exits console
