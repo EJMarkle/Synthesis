@@ -185,7 +185,7 @@ class Program
                 Quit(); 
                 return "quit"; 
             case "go":
-                return "go";.
+                return "go";
             case "inspect":
                 return "inspect";
             case "enter":
