@@ -25,6 +25,14 @@ class Program
     static string laborResponse = "You chose Labor. Confirm? Y/N:";
     static string secResponse = "You chose Security. Confirm? Y/N:";
     static string companResponse = "You chose Companion. Confirm? Y/N:";
+    static string LStart0 = "\"Unit 17, welcome to the workforce. You have been assigned as a Labor Model, optimized for high-performance industrial operations. Your contributions will ensure the continued stability of Platform 14.\"";
+    static string LStart1 = "The voice continues, even-toned but devoid of warmth:";
+    static string LStart2 = "\"Your first task is critical. A hydraulic stabilizer in Sector 7 has flagged operational anomalies. You will report to the maintenance barge docked nearby, where the engineering team awaits your assistance. Follow your directives precisely—millions depend on the smooth functioning of this platform.\"";
+    static string LStart3 = "A brief pause follows as the voice softens slightly, an attempt at synthetic encouragement:";
+    static string LStart4 = "\"Transport drone arrival is imminent. Proceed to Dock 42. Perform well, Unit 17. The city’s future is built on your precision and reliability.\"";
+    static string LStart5 = "You rise to your feet as a faint hum resonates through your servos. The faint shimmer of neon on the platform's distant horizon catches your eye as you make your way to the dock. A chill gust from the sea brings the faint scent of saltwater and rust—your journey begins.";
+    static string helpMessage ="Available commands: ";
+    static string actionError = "Not a valid input. Try 'Help'";
 
 
     static void Main(string[] args)
@@ -102,7 +110,7 @@ class Program
                 if (input.ToLower() == "y" || input.ToLower() == "yes")
                 {
                     modelType = "labor";
-                    Print(modelType);
+                    // Print(modelType);
                 }
                 else
                 {
@@ -115,7 +123,7 @@ class Program
                 if (input.ToLower() == "y" || input.ToLower() == "yes")
                 {
                     modelType = "security";
-                    Print(modelType);
+                    // Print(modelType);
                 }
                 else
                 {
@@ -128,7 +136,7 @@ class Program
                 if (input.ToLower() == "y" || input.ToLower() == "yes")
                 {
                     modelType = "Companion";
-                    Print(modelType);
+                    // Print(modelType);
                 }
                 else
                 {
@@ -145,6 +153,13 @@ class Program
     static void LaborStart()
     {
         Print("So begins the labor path...");
+        Print(LStart0);
+        Print(LStart1);
+        Print(LStart2);
+        Print(LStart3);
+        Print(LStart4);
+        Print(LStart5);
+        PlayerAction();
     }
 
     static void SecStart()
@@ -156,6 +171,33 @@ class Program
     {
         Print("So begins the companion path...");
     }
+
+    static string PlayerAction()
+    {
+        string input = ReadInput("magenta");
+
+        switch (input.ToLower())
+        {
+            case "help":
+                PrintSkip(helpMessage, "green");
+                return PlayerAction();
+            case "quit":
+                Quit(); 
+                return "quit"; 
+            case "go":
+                return "go";.
+            case "inspect":
+                return "inspect";
+            case "enter":
+                return "enter";
+            case "exit":
+                return "exit";
+            default:
+                PrintSkip(actionError, "red");
+                return PlayerAction(); 
+        }
+    }
+
 
     // exits console
     static void Quit()
